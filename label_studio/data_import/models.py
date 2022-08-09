@@ -23,7 +23,7 @@ def upload_name_generator(instance, filename):
     project = str(instance.project_id)
     project_dir = os.path.join(settings.MEDIA_ROOT, settings.UPLOAD_DIR, project)
     os.makedirs(project_dir, exist_ok=True)
-    path = settings.UPLOAD_DIR + '/' + project + '/' + str(uuid.uuid4())[0:8] + '-' + filename
+    ath = f'{settings.UPLOAD_DIR}/{project}/{str(uuid.uuid4())[24:]}{pathlib.Path(filename).suffix}'
     return path
 
 
